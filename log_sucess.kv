@@ -1,0 +1,151 @@
+Screen:
+    name: "LSucessScreen"
+    ContentNavigationDrawer:
+        ScrollView:
+            MDScreen:
+                
+                MDBoxLayout:
+                    
+                    MDGridLayout:
+                        id: changeimg
+                        #md_bg_color: 50/255,20/255,10/255,1
+                        size_hint_y:.9
+                        cols:2
+                        padding:[dp(30),dp(30),dp(30),dp(30)]
+                        spacing:dp(20)
+                        ElementCard:
+                            image:"images/my_renter.png"
+                            text:"My Renter"
+                            on_release: app.myrenter()
+                        ElementCard:
+                            image:"images/add.png"
+                            text:"Add Renter"
+                            on_release: app.addrenter()
+                        ElementCard:
+                            image:"images/modify.png"
+                            text:"Edit Details"
+                            on_release: app.modifyrenter()
+                        
+                        ElementCard:
+                            image:"images/delete.png"
+                            text:"Delete"
+                            on_release: app.deleterenter()
+                        ElementCard:
+                            image:"images/bill.png"
+                            text:"Reminder"
+                            on_release: app.rem()
+                        ElementCard:
+                            image:"images/payment.png"
+                            text:"Payment"
+                            on_release: app.payment()
+                   
+    MDScreen:
+        FloatLayout:
+            ScreenManager:
+                MDScreen:
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDTopAppBar:
+                            title: "Room Rent Khata"
+                            anchor_title: "left"
+                            elevation: 0
+                            left_action_items: [['menu', lambda x: nav_drawer.set_state("open")]]
+                            right_action_items: [["message-badge-outline", lambda x: x, "", "Message star"]]
+                        Widget:
+            MDNavigationDrawer:
+                id: nav_drawer
+                ContentNavigationDrawer:
+                    id: content_drawer
+                    orientation: "vertical"
+                    padding: "8dp"
+                    spacing: "8dp"
+                    AnchorLayout:
+                        anchor_x: "left"
+                        size_hint_y: None
+                        height: avatar.height
+                        Image:
+                            id: avatar
+                            size: "120dp", "120dp"
+                            source: "images/logo.png"
+                    MDLabel:
+                        id: name
+                        text: "Room Rent Khata"
+                        font_style: "Button"
+                        size_hint_y: None
+                        height: self.texture_size[1]
+                        halign :"center"
+                    MDLabel:
+                        id: email
+                        text: "infoanusav@gmail.com"
+                        font_style: "Caption"
+                        size_hint_y: None
+                        height: self.texture_size[1]
+                        halign:"center"
+                    ScrollView:
+                        DrawerList:
+                            id: md_list1
+                            OneLineIconListItem:
+                                text: "Edit Profils"
+                                on_release:app.editpro()
+                                IconLeftWidget:
+                                    icon: "account-edit"
+                            OneLineIconListItem:
+                                id:darkthe
+                                text: "Dark Theme"
+                                on_release:app.darkthe()
+                                IconLeftWidget:
+                                    icon: "theme-light-dark"
+                            OneLineIconListItem:
+                                text: "Help & Support"
+                                on_release:app.help_st()
+                                IconLeftWidget:
+                                    icon: "help-box"
+                            OneLineIconListItem:
+                                text: "Setting"
+                                on_release:app.sting()
+                                IconLeftWidget:
+                                    icon: "account-settings"
+                            OneLineIconListItem:
+                                text: "About Us"
+                                on_release: app.us_about()
+                                IconLeftWidget:
+                                    icon: "account-supervisor-outline"
+                            OneLineIconListItem:
+                                text: "Log Out"
+                                on_release: app.logout()
+                                IconLeftWidget:
+                                    icon: "logout"
+                    MDLabel:
+                        id: version
+                        text: "Version 0.1"
+                        font_style: "Caption"
+                        size_hint_y: None
+                        height: self.texture_size[1]
+                        halign: "center"
+<ElementCard@MDCard>:
+    md_bg_color:50/255,200/255,200/255,1
+    padding:"15dp"
+    spacing:"5dp"
+    radius:[30,30,30,30]
+    ripple_behavior: True
+    image:''
+    text:""
+    items_count:""
+    subtext:''
+    orientation:'vertical'
+    Image:
+        source:root.image
+    MDBoxLayout:
+        orientation:'vertical'
+        MDLabel:
+            halign:"center"
+            text:root.text
+            font_style:"H6"
+            font_name: "Comic"
+        MDLabel:
+            halign:"center"
+            font_style: "Caption"
+            text: root.subtext
+        MDLabel:
+            halign: "center"
+            text: root.items_count

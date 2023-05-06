@@ -1,0 +1,33 @@
+Screen:
+    name: "modifyrenterScreen"
+    ContentNavigationDrawer:
+        MDScreen:
+            FloatLayout:
+                MDTextField:
+                    id:renter_id
+                    hint_text: "Enter Renter Id"
+                    helper_text:"forget"
+                    pos_hint : {'center_x':0.5 ,'center_y':0.6}
+                    width: 500
+                    size_hint: (0.7,0.1)
+                    helper_text: 'Required'
+                MDRectangleFlatButton:
+                    text: "Fetch Details"
+                    pos_hint : {'center_x':0.5 ,'center_y':0.4}
+                    text_color: 0, 0, 1, 1
+                    on_release: app.fetch_del()
+                    width: 500
+
+
+    MDScreen:
+        FloatLayout:
+            ScreenManager:
+                MDScreen:
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDTopAppBar:
+                            title: "Modify Renter"
+                            anchor_title: "left"
+                            elevation: 0
+                            left_action_items: [['arrow-left',lambda x: app.back()]]
+                        Widget:

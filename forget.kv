@@ -1,0 +1,74 @@
+Screen:
+    name: "ForgetScreen"
+    canvas.before:
+
+        Rectangle:
+            source:''
+            size: root.width, root.height
+            pos: self.pos
+    FloatLayout:
+        MDIconButton:
+            icon: "keyboard-backspace"
+            pos_hint : {'center_x':0.05 ,'center_y':0.9}
+            size_hint: (0.35,0.1)
+            text_color: "black"
+            md_bg_color: 50/255,200/255,200/255,1
+            on_release: app.back_sign_in()
+            width: 100
+        MDLabel:
+
+            text: "Forget Password"
+            font_style: 'H5'
+            font_name: "Comic"
+            pos_hint : {'center_x':0.5 ,'center_y':0.9}
+            halign :"center"
+        MDLabel:
+            text: "Update email to get Pasword"
+            font_style: 'H6'
+            font_name: "Comic"
+            pos_hint : {'center_x':0.5 ,'center_y':0.81}
+            halign :"center"
+            #color: (0,1,0,1)
+        MDTextField:
+            id:username_id_fiels
+            hint_text: "Enter Username"
+            helper_text:"forget"
+            pos_hint : {'center_x':0.5 ,'center_y':0.65}
+            width: 500
+            size_hint: (0.6,0.1)
+        	helper_text: 'Required'
+        MDLabel:
+            id:capta
+            text: "Capta"
+            font_style: 'H5'
+            font_name: "Comic"
+            pos_hint : {'center_x':0.5 ,'center_y':0.55}
+            halign :"center"
+        MDTextField:
+            id:enter_cap
+            hint_text: "Enter Capta"
+            helper_text:"forget"
+            pos_hint : {'center_x':0.5 ,'center_y':0.45}
+            width: 500
+            size_hint: (0.4,0.1)
+        	helper_text: 'Required'
+            mode: "rectangle"
+        MDRoundFlatIconButton:
+            text: "Get Pasword"
+            pos_hint : {'center_x':0.5 ,'center_y':0.3}
+            size_hint: (0.6,0.1)
+            text_color: "black"
+            md_bg_color: 50/255,200/255,200/255,1
+            on_press:   app.for_log_in()  
+            width: 100
+        
+<LineRectangle>:
+    canvas:
+        Color:
+            rgba: .9, .1, .5, .9
+        Line:
+            width: 1
+            rectangle: (self.x, self.y, self.width, self.height)
+    Label:
+        center: root.center
+        text: 'Rectangle'

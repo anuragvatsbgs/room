@@ -1,0 +1,77 @@
+Screen:
+    name: "Pay"
+    ContentNavigationDrawer:
+        MDScreen:
+            FloatLayout:
+                MDLabel:
+                    id : pre_bal
+                    text: "Previous Balance : 0"
+                    font_style: 'H6'
+                    pos_hint : {'center_x':0.245 ,'center_y':0.8}
+                    halign :"left"
+                    size_hint: (0.3,0.1)
+                MDLabel:
+                    id: cur_bal
+                    text: "Current Balance : 0"
+                    font_style: 'H6'
+                    pos_hint : {'center_x':0.75 ,'center_y':0.8}
+                    halign :"center"
+                MDLabel:
+                    id: T_balance
+                    text: "Total Balance : 0"
+                    font_style: 'H6'
+                    pos_hint : {'center_x':0.245 ,'center_y':0.73}
+                    halign :"left"
+                    size_hint: (0.3,0.1)
+                MDTextField:
+                    id:depo
+                    hint_text: "Tatal Payment Amount"
+                    helper_text:"forget"
+                    pos_hint : {'center_x':0.5 ,'center_y':0.6}
+                    width: 500
+                    size_hint: (0.7,0.1)
+                    helper_text: 'Required'
+                    color: (0,1,0,1)
+                MDTextField:
+                    id:p_type
+                    hint_text: "Payment Type"
+                    helper_text:"forget"
+                    pos_hint : {'center_x':0.5 ,'center_y':0.5}
+                    width: 500
+                    size_hint: (0.7,0.1)
+                    helper_text: 'Required'
+                    color: (0,1,0,1)
+                MDTextField:
+                    id:det_pay
+                    hint_text: "Additional Details Regarding Payment"
+                    helper_text:"forget"
+                    pos_hint: {'center_x':0.5 ,'center_y':0.4}
+                    width: 500
+                    size_hint: (0.7,0.1)
+                    helper_text: 'Required'
+                    color: (0,1,0,1)
+                MDRaisedButton:
+                    text: "Next"
+                    md_bg_color: "green"
+                    on_release: app.conpay()
+                    pos_hint: {'center_x':0.5 ,'center_y':0.2}
+                MDFloatingActionButton:
+                    id: biill
+                    icon: "images/bill.png"
+                    md_bg_color: app.theme_cls.primary_color
+                    pos_hint: {'center_x':0.85 ,'center_y':0.14}
+                    on_release: app.billpdf()
+                    disabled: True
+              
+    MDScreen:
+        FloatLayout:
+            ScreenManager:
+                MDScreen:
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDTopAppBar:
+                            title: "Payment"
+                            anchor_title: "left"
+                            elevation: 0
+                            left_action_items: [['arrow-left',lambda x: app.back_payyy()]]  
+                        Widget:

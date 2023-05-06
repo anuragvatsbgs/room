@@ -1,0 +1,75 @@
+Screen:
+    name: "MainScreen"
+    canvas.before:
+
+        Rectangle:
+            source:''
+            size: root.width, root.height
+            pos: self.pos
+    FloatLayout:
+        MDLabel:
+            text: "ROOM RENT KHATA"
+            font_style: 'H4'
+            font_name: "Comic"
+            pos_hint : {'center_x':0.5 ,'center_y':0.9}
+            halign :"center"
+        MDLabel:
+            text: "LOG IN"
+            font_style: 'H6'
+            font_name: "Comic"
+            pos_hint : {'center_x':0.5 ,'center_y':0.81}
+            halign :"center"
+            #color: (0,1,0,1)
+        MDTextField:
+            id:username_text_fied
+            hint_text: "Enter Username"
+            helper_text:"forget"
+            pos_hint : {'center_x':0.5 ,'center_y':0.65}
+            width: 500
+            size_hint: (0.7,0.1)
+        	helper_text: 'Required'
+            
+        MDTextField:
+            id:pasword_text_fied
+            hint_text: "Password"
+            helper_text:"forget"
+            pos_hint : {'center_x':0.5 ,'center_y':0.55}
+            width: 500
+            size_hint: (0.7,0.1)
+        	helper_text: 'Required'
+            
+        MDRoundFlatIconButton:
+            text: "LOG IN"
+            pos_hint : {'center_x':0.5 ,'center_y':0.35}
+            size_hint: (0.6,0.1)
+            text_color: "black"
+            md_bg_color: 50/255,200/255,200/255,1
+            on_press:   app.log_in()
+                        
+            width: 100
+        MDFlatButton:
+            text: "Forget Password"
+            font_style: 'Body1'
+            pos_hint : {'center_x':0.5 ,'center_y':0.25}
+            halign :"center"
+            theme_text_color: "Custom"
+            text_color: "red"
+            on_release: app.forget()
+        MDRoundFlatIconButton:
+            text: "SIGN UP"
+            pos_hint : {'center_x':0.5 ,'center_y':0.15}
+            size_hint: (0.6,0.1)
+            text_color: "black"
+            md_bg_color: 50/255,200/255,200/255,1
+            on_release: app.sign_in()
+            width: 100
+<LineRectangle>:
+    canvas:
+        Color:
+            rgba: .9, .1, .5, .9
+        Line:
+            width: 1
+            rectangle: (self.x, self.y, self.width, self.height)
+    Label:
+        center: root.center
+        text: 'Rectangle'

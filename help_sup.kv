@@ -1,0 +1,26 @@
+Screen:
+    name: "help_supp"
+    ContentNavigationDrawer:
+        MDScreen:
+            MDBoxLayout:
+                FloatLayout:
+                    MDLabel:
+                        text: "For Any Help Contact Us on infoanusav@gmail.com or visit our website https://www.anusavtechnology.com/help_Support and give feed back for any type of issue faced by AnuSav Technology Application. We welcomming your sussision. \n\n Thank You for Using Our Services."
+                        font_style: 'H6'
+                        pos_hint : {'center_x':0.5 ,'center_y':0.6}
+                        size_hint: (0.89,0.1)
+                        halign :"center"
+
+
+    MDScreen:
+        FloatLayout:
+            ScreenManager:
+                MDScreen:
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDTopAppBar:
+                            title: "Help & Support"
+                            anchor_title: "left"
+                            elevation: 0
+                            left_action_items: [['arrow-left',lambda x: app.back()]]
+                        Widget:

@@ -1,0 +1,8 @@
+firebase==4.0.1
+fpdf==1.7.2
+fpdf2==2.7.4
+Kivy==2.2.0rc1
+kivymd==1.1.1
+mysql_connector_repackaged==0.3.1
+yagmail==0.15.293
+mysql-connector-python==8.0.33

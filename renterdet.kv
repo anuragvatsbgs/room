@@ -1,0 +1,31 @@
+Screen:
+    name: "RenterDetailsScreen"
+    ContentNavigationDrawer:
+        MDScreen:
+            MDBoxLayout:
+                size_hint_y:.80
+                FloatLayout:
+                    AsyncImage:
+                        id:imagexpa
+                        size_hint_y: "0.4sp"
+                        source: 'images/barcode.gif'
+                        allow_stretch: True
+                        pos_hint : {'center_x':0.5 ,'center_y':0.7}
+                    MDLabel:
+                        text: "Room Rent Khata"
+                        font_style: 'H4'
+                        pos_hint : {'center_x':0.5 ,'center_y':0.2}
+                        halign :"center"
+    MDScreen:
+        FloatLayout:
+            ScreenManager:
+                MDScreen:
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDTopAppBar:
+                            title: "Details"
+                            anchor_title: "left"
+                            elevation: 0
+                            left_action_items: [['arrow-left',lambda x: app.back()]]
+                        
+                        Widget:

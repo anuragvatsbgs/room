@@ -1,0 +1,83 @@
+Screen:
+    name: "addrenterScreen"
+    ContentNavigationDrawer:
+        MDScreen:
+            MDBoxLayout:
+                FloatLayout:   
+                    MDTextField:
+                        id:name
+                        hint_text: "NAME"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.8}
+                        width: 500
+                        size_hint: (0.7,0.1)
+                        helper_text: 'Required'
+                    MDTextField:
+                        id:f_name
+                        hint_text: "FATHER'S NAME"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.7}
+                        width: 500
+                        size_hint: (0.7,0.1)
+                        helper_text: 'Required'
+                    MDTextField:
+                        id:mobile_no
+                        hint_text: "MOBILE NO."
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.6}
+                        width: 500
+                        size_hint: (0.7,0.1)
+                        helper_text: 'Required'
+                    MDTextField:
+                        id:email
+                        hint_text: "EMAIL"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.5}
+                        width: 500
+                        size_hint: (0.7,0.1)
+                        helper_text: 'Required'
+                    MDTextField:
+                        id:adress
+                        hint_text: "ADRESS"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.4}
+                        width: 500
+                        size_hint: (0.7,0.1)
+                        helper_text: 'Required'
+                    MDTextField:
+                        id:adhar_no
+                        hint_text: "ADHAR NO."
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.3}
+                        width: 500
+                        size_hint: (0.7,0.1)
+                        helper_text: 'Required'
+                    MDTextField:
+                        id:no_of_person
+                        hint_text: "NO.OF PERSON"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.2}
+                        width: 500
+                        size_hint: (0.7,0.1)
+                        helper_text: 'Required'
+                    MDRoundFlatIconButton:
+                        text: "Next"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.08}
+                        size_hint: (0.6,0.1)
+                        text_color: "black"
+                        md_bg_color: 50/255,200/255,200/255,1
+                        on_release: app.add_sucessnextt()
+                        width: 500
+                    
+    MDScreen:
+        FloatLayout:
+            ScreenManager:
+                MDScreen:
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDTopAppBar:
+                            title: "Add Renter"
+                            anchor_title: "left"
+                            elevation: 0
+                            left_action_items: [['arrow-left',lambda x: app.back()]]
+                        Widget:

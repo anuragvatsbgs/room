@@ -1,0 +1,23 @@
+Screen:
+    name: "setting"
+    ContentNavigationDrawer:
+        MDScreen:
+            MDBoxLayout:
+                FloatLayout:
+                    MDSwitch:
+                        pos_hint: {'center_x': .5, 'center_y': .5}
+                   
+                        
+
+    MDScreen:
+        FloatLayout:
+            ScreenManager:
+                MDScreen:
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDTopAppBar:
+                            title: "Setting"
+                            anchor_title: "left"
+                            elevation: 0
+                            left_action_items: [['arrow-left',lambda x: app.back()]]
+                        Widget:

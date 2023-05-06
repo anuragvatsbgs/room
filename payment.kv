@@ -1,0 +1,104 @@
+Screen:
+    name: "PaymentScreen"
+    ContentNavigationDrawer:
+        MDScreen:
+            MDBoxLayout:
+                FloatLayout:
+                    MDTextField:
+                        id: renter_id
+                        hint_text: "Renter Id"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.25 ,'center_y':0.75}
+                        width: 500
+                        size_hint: (0.39,0.1)
+                        helper_text: 'Required'
+                        color: 
+                    MDTextField:
+                        id: months
+                        hint_text: "Months"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.75 ,'center_y':0.75}
+                        width: 500
+                        size_hint: (0.39,0.1)
+                        helper_text: 'Required'
+                        color: (0,1,0,1)
+                    MDTextField:
+                        id: c_e_read
+                        hint_text: "Current Electric Reading"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.25 ,'center_y':0.65}
+                        width: 500
+                        size_hint: (0.39,0.1)
+                        helper_text: 'Required'
+                        color: (0,1,0,1)
+                    MDTextField:
+                        id: c_w_read
+                        hint_text: "Current Water Reading"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.75 ,'center_y':0.65}
+                        width: 500
+                        size_hint: (0.39,0.1)
+                        helper_text: 'Required'
+                        color: (0,1,0,1)
+                    MDTextField:
+                        id: c_g_read
+                        hint_text: "Current Gas Reading"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.25 ,'center_y':0.55}
+                        width: 500
+                        size_hint: (0.39,0.1)
+                        helper_text: 'Required'
+                        color: (0,1,0,1)
+                    MDTextField:
+                        id: t_e_cost
+                        hint_text: "Total Electric Cost"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.75 ,'center_y':0.55}
+                        width: 500
+                        size_hint: (0.39,0.1)
+                        helper_text: 'Required'
+                        color: (0,1,0,1)
+                    MDTextField:
+                        id: t_w_cost
+                        hint_text: "Total Water Cost"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.25 ,'center_y':0.45}
+                        width: 500
+                        size_hint: (0.39,0.1)
+                        helper_text: 'Required'
+                        color: (0,1,0,1)
+                    MDTextField:
+                        id: t_g_cost
+                        hint_text: "Total Gas Cost"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.75 ,'center_y':0.45}
+                        width: 500
+                        size_hint: (0.39,0.1)
+                        helper_text: 'Required'
+                        color: (0,1,0,1)
+                    MDTextField:
+                        id: additional
+                        hint_text: "Additional"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.25 ,'center_y':0.35}
+                        width: 500
+                        size_hint: (0.39,0.1)
+                        helper_text: 'Required'
+                        color: (0,1,0,1)
+                    MDRaisedButton:
+                        text: "Next"
+                        md_bg_color: "green"
+                        on_release: app.pay()
+                        pos_hint : {'center_x':0.5 ,'center_y':0.2}
+    MDScreen:
+        FloatLayout:
+            ScreenManager:
+                MDScreen:
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDTopAppBar:
+                            title: "Payment"
+                            anchor_title: "left"
+                            elevation: 0
+                            left_action_items: [['arrow-left',lambda x: app.back()]]
+                        Widget:

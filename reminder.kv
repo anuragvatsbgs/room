@@ -1,0 +1,38 @@
+Screen:
+    name: "Reminder"
+    ContentNavigationDrawer:
+        MDScreen:
+            MDBoxLayout:
+                FloatLayout:
+                    MDLabel:
+                        text: "Update Email Id in myprofile to send Email for Reminder\n "
+                        font_style: 'H6'
+                        pos_hint : {'center_x':0.5 ,'center_y':0.8}
+                        halign :"center"
+                    MDTextField:
+                        id:renter_id
+                        hint_text: "Enter Renter Id"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.6}
+                        width: 500
+                        size_hint: (0.7,0.1)
+                        helper_text: 'Required'
+                    MDRectangleFlatButton:
+                        text: "Next"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.4}
+                        text_color: 0, 0, 1, 1
+                        on_release: app.next_rem()
+                        width: 500
+                   
+    MDScreen:
+        FloatLayout:
+            ScreenManager:
+                MDScreen:
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDTopAppBar:
+                            title: "Reminder"
+                            anchor_title: "left"
+                            elevation: 0
+                            left_action_items: [['arrow-left',lambda x: app.back()]]  
+                        Widget:

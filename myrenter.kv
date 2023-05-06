@@ -1,0 +1,96 @@
+Screen:
+    name: "myrenterScreen"
+    ContentNavigationDrawer:
+        MDScreen:
+            MDBoxLayout:
+                size_hint_y:.89
+                ScrollView:
+
+                    MDList:
+                        id: three_list_viewer
+     
+    MDScreen:
+        FloatLayout:
+            ScreenManager:
+                MDScreen:
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDTopAppBar:
+                            title: "My Renter"
+                            anchor_title: "left"
+                            elevation: 0
+                            left_action_items: [['arrow-left',lambda x: app.back()]]
+                            right_action_items: [['home', lambda x: app.back()]]
+                        Widget:
+            MDNavigationDrawer:
+                id: nav_drawer
+                ContentNavigationDrawer:
+                    id: content_drawer
+                    orientation: "vertical"
+                    padding: "8dp"
+                    spacing: "8dp"
+                    AnchorLayout:
+                        anchor_x: "left"
+                        size_hint_y: None
+                        height: avatar.height
+                        Image:
+                            id: avatar
+                            size: "120dp", "120dp"
+                            source: ""
+                    MDLabel:
+                        id: name
+                        text: "Room Rent Khata"
+                        font_style: "Button"
+                        size_hint_y: None
+                        height: self.texture_size[1]
+                        halign :"center"
+                    MDLabel:
+                        id: email
+                        text: "infoanusav@gmail.com"
+                        font_style: "Caption"
+                        size_hint_y: None
+                        height: self.texture_size[1]
+                        halign :"center"
+                    ScrollView:
+                        DrawerList:
+                            id: md_list1
+                            OneLineIconListItem:
+                                text: "Edit Profils"
+                                on_release:app.editpro()
+                                IconLeftWidget:
+                                    icon: "account-edit"
+                            OneLineIconListItem:
+                                id:darkthe
+                                text: "Dark Theme"
+                                on_release:app.darkthe()
+                                IconLeftWidget:
+                                    icon: "theme-light-dark"
+                            OneLineIconListItem:
+                                text: "Help & Support"
+                                on_release:
+                                    nestedsm.current = 'Screen2'
+                                    root.ids.nav_drawer.set_state(new_state='toggle', animation=True)
+                                IconLeftWidget:
+                                    icon: "help-box"
+                            OneLineIconListItem:
+                                text: "Setting"
+                                on_release:
+                                IconLeftWidget:
+                                    icon: "account-settings"
+                            OneLineIconListItem:
+                                text: "About Us"
+                                on_release:
+                                IconLeftWidget:
+                                    icon: "face-profile"
+                            OneLineIconListItem:
+                                text: "Log Out"
+                                on_release:app.logout()
+                                IconLeftWidget:
+                                    icon: "logout"
+                    MDLabel:
+                        id: version
+                        text: "Version 0.1"
+                        font_style: "Caption"
+                        size_hint_y: None
+                        height: self.texture_size[1]
+                        halign :"center"

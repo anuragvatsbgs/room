@@ -1,0 +1,120 @@
+Screen:
+    name: "Sign_Up"
+    canvas.before:
+        Color:
+            rgba: (1, 1, 1, 1)
+        Rectangle:
+            source:''
+            size: root.width, root.height
+            pos: self.pos
+    FloatLayout:
+        MDIconButton:
+            icon: "keyboard-backspace"
+            pos_hint : {'center_x':0.09 ,'center_y':0.9}
+            size_hint: (0.4,0.1)
+            text_color: "black"
+            md_bg_color: 50/255,200/255,200/255,1
+            on_release: app.back_sign_in()
+            width: 100
+        MDLabel:
+            text: "Sign Up"
+            font_style: 'H4'
+            pos_hint: {'center_x':0.5 ,'center_y':0.9}
+            halign:"center"
+            font_name: "Comic"
+            #color: (0,1,2,1)
+        MDTextField:
+            id:name
+            hint_text: "Name"
+            helper_text:"forget"
+            pos_hint : {'center_x':0.5 ,'center_y':0.78}
+            width: 500
+            size_hint: (0.7,0.1)
+        	helper_text: 'Required'
+            color: (0,1,0,1)
+        MDTextField:
+            id: user_id
+            hint_text: "Create User Id"
+            helper_text:"forget"
+            pos_hint : {'center_x':0.5 ,'center_y':0.68}
+            width: 500
+            size_hint: (0.7,0.1)
+        	helper_text: 'Required'
+            color: (0,1,0,1)
+        MDTextField:
+            id:password
+            hint_text: "Password"
+            helper_text:"forget"
+            pos_hint : {'center_x':0.5 ,'center_y':0.58}
+            width: 500
+            size_hint: (0.7,0.1)
+        	helper_text: 'Required'
+            color: (0,1,0,1)
+        MDTextField:
+            id:con_password
+            hint_text: "Confirm Password"
+            helper_text:"forget"
+            pos_hint : {'center_x':0.5 ,'center_y':0.48}
+            width: 500
+            size_hint: (0.7,0.1)
+        	helper_text: 'Required'
+            color: (0,1,0,1)
+        MDLabel:
+            text: "ab23Ajs"
+            font_style: 'H4'
+            pos_hint: {'center_x':0.5 ,'center_y':0.39}
+            halign:"center"
+            font_name: "Comic"
+            #color: (0,1,2,1)
+        MDTextField:
+            id:name
+            hint_text: "Capta"
+            helper_text:"forget"
+            pos_hint : {'center_x':0.5 ,'center_y':0.3}
+            width: 500
+            size_hint: (0.7,0.105)
+        	helper_text: 'Required'
+            color: (0,1,0,1)
+            mode: "rectangle"
+        CheckItem:
+            id: checkitm
+            text: "Agree with Terms & Conditions"
+            group: "child"
+            pos_hint: {'center_x':0.5 ,'center_y': 0.22}
+            size_hint:(0.7, None)
+            active: True
+            
+            
+        MDRoundFlatIconButton:
+            text: "SIGN UP"
+            pos_hint : {'center_x':0.5 ,'center_y':0.13}
+            size_hint: (0.6,0.1)
+            text_color: "black"
+            md_bg_color: 50/255,200/255,200/255,1
+            on_press:   app.next_sign_in()
+            
+            width: 100
+       
+<LineRectangle>:
+    canvas:
+        Color:
+            rgba: .9, .1, .5, .9
+        Line:
+            width: 1
+            rectangle: (self.x, self.y, self.width, self.height)
+    Label:
+        center: root.center
+        text: 'Rectangle'
+
+<CheckItem>
+    adaptive_height: True
+    MDCheckbox:
+        size_hint: None, None
+        size: "48dp", "48dp"
+        group: root.group
+        on_active: root.checkbox_click(self, self.active)
+    MDLabel:
+        text: root.text
+        adaptive_height: True
+        theme_text_color: "Custom"
+        pos_hint: {"center_y": 0.5}

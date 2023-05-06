@@ -1,0 +1,88 @@
+Screen:
+    name: "myprofilScreen"
+    ContentNavigationDrawer:
+        MDScreen:
+            MDBoxLayout:
+                FloatLayout:
+                    AsyncImage:
+                        id:imagexpa
+                        size_hint_y: "0.2sp"
+                        source: 'images/logo.png'
+                        allow_stretch: True
+                        pos_hint : {'center_x':0.2 ,'center_y':0.75}
+                    MDTextField:
+                        id:u_name
+                        text: ""
+                        hint_text: "NAME"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.6 ,'center_y':0.8}
+                        width: 500
+                        size_hint: (0.5,0.1)
+                        helper_text: 'Required'
+                    MDTextField:
+                        id:u_id
+                        text: ""
+                        hint_text: "USER ID"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.6 ,'center_y':0.7}
+                        width: 500
+                        size_hint: (0.5,0.1)
+                        helper_text: 'Required'
+                    MDTextField:
+                        id:pas
+                        text: ""
+                        hint_text: "PASWORD"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.6}
+                        width: 500
+                        size_hint: (0.7,0.1)
+                        helper_text: 'Required'
+                    MDTextField:
+                        id:email
+                        text: ""
+                        hint_text: "EMAIL"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.5}
+                        width: 500
+                        size_hint: (0.7,0.1)
+                        helper_text: 'Required'
+                    MDTextField:
+                        id:m_no
+                        text: ""
+                        hint_text: "MOBILE NUMBER"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.4}
+                        width: 500
+                        size_hint: (0.7,0.1)
+                        helper_text: 'Required'
+                    MDTextField:
+                        id:p_link
+                        text: "images/logo.png"
+                        hint_text: "PROFILE IMAGE LINK"
+                        helper_text:"forget"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.3}
+                        width: 500
+                        size_hint: (0.7,0.1)
+                        helper_text: 'Required'
+                    MDRoundFlatIconButton:
+                        text: "UPDATE"
+                        pos_hint : {'center_x':0.5 ,'center_y':0.15}
+                        text_color: 0, 0, 1, 1
+                        size_hint: (0.6,0.1)
+                        text_color: "black"
+                        md_bg_color: 50/255,200/255,200/255,1
+                        on_press:   app.log_in()
+                        width: 100
+                   
+    MDScreen:
+        FloatLayout:
+            ScreenManager:
+                MDScreen:
+                    MDBoxLayout:
+                        orientation: 'vertical'
+                        MDTopAppBar:
+                            title: "My Profile"
+                            anchor_title: "left"
+                            elevation: 0
+                            left_action_items: [['arrow-left',lambda x: app.back()]]
+                        Widget:
